@@ -14,15 +14,14 @@
 <meta property="og:site_name" content="KumoCuSO4的博客">
 <meta property="og:description" content="前言这是一个Vue前端开发的记录与心得系列，用来记录一个纯小白的学习经历和开发历程。接下来准备每天更新一次博客，督促自己绝不拖延绝不摆烂。 今日开发进度项目创建本项目基于vue3.x, vue-cli4.x，使用ide主要为webstorm。（vue-cli需要3.0以上的版本为了使用vue ui，至于为什么要用vue3呢…，新就是好！×） webstorm选择创建vue项目，创建时默认为vue2">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://kumocuso4.github.io/Blog/2021/08/08/progress-1/1.png">
 <meta property="og:image" content="https://kumocuso4.github.io/Blog/2021/08/08/progress-1/2.png">
 <meta property="og:image" content="https://kumocuso4.github.io/Blog/2021/08/08/progress-1/3.png">
 <meta property="og:image" content="https://kumocuso4.github.io/Blog/2021/08/08/progress-1/4.png">
 <meta property="article:published_time" content="2021-08-08T10:48:16.000Z">
-<meta property="article:modified_time" content="2021-08-08T14:19:49.261Z">
+<meta property="article:modified_time" content="2021-08-08T14:25:02.741Z">
 <meta property="article:author" content="KumoCuSO4">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://kumocuso4.github.io/Blog/2021/08/08/progress-1/1.png">
+<meta name="twitter:image" content="https://kumocuso4.github.io/Blog/2021/08/08/progress-1/2.png">
   
     <link rel="alternate" href="/Blog/atom.xml" title="KumoCuSO4的博客" type="application/atom+xml">
   
@@ -97,7 +96,7 @@
 <h2 id="今日开发进度"><a href="#今日开发进度" class="headerlink" title="今日开发进度"></a>今日开发进度</h2><h3 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h3><p>本项目基于vue3.x, vue-cli4.x，使用ide主要为webstorm。（vue-cli需要3.0以上的版本为了使用vue ui，至于为什么要用vue3呢…，新就是好！×）</p>
 <p>webstorm选择创建vue项目，创建时默认为vue2.x版本。（后来发现如果想创建vue3的项目其实不该这么做，遇到的问题如<a href="#%E9%97%AE%E9%A2%98">下文</a>）</p>
 <p>package.json的包配置如下：</p>
-<img src="/Blog/2021/08/08/progress-1/1.png" class="">
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;core-js&quot;</span>: <span class="string">&quot;^3.6.5&quot;</span>,</span><br><span class="line">  <span class="string">&quot;vue&quot;</span>: <span class="string">&quot;^3.1.5&quot;</span>,</span><br><span class="line">  <span class="string">&quot;vue-router&quot;</span>: <span class="string">&quot;^3.5.2&quot;</span>,</span><br><span class="line">  <span class="string">&quot;vuetify&quot;</span>: <span class="string">&quot;^3.0.0-alpha.10&quot;</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">&quot;devDependencies&quot;</span>: &#123;</span><br><span class="line">  <span class="string">&quot;@vue/cli-plugin-babel&quot;</span>: <span class="string">&quot;~4.5.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;@vue/cli-plugin-eslint&quot;</span>: <span class="string">&quot;~4.5.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;@vue/cli-service&quot;</span>: <span class="string">&quot;~4.5.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;@vue/compiler-sfc&quot;</span>: <span class="string">&quot;^3.1.5&quot;</span>,</span><br><span class="line">  <span class="string">&quot;babel-eslint&quot;</span>: <span class="string">&quot;^10.1.0&quot;</span>,</span><br><span class="line">  <span class="string">&quot;eslint&quot;</span>: <span class="string">&quot;^6.7.2&quot;</span>,</span><br><span class="line">  <span class="string">&quot;eslint-plugin-vue&quot;</span>: <span class="string">&quot;^6.2.2&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p>这里改了vue的版本到3.x。目前添加了vue-router（用于管理路由）、vuetify（提供了优秀的ui组件）【目前兼容vue3.x的vuetify3仍是alpha版本，可能会有未知的问题】。后续看情况再添加。</p>
 <p>添加包可以通过：</p>
@@ -129,7 +128,7 @@
 </blockquote>
 <p><strong>解决：</strong></p>
 <p>main.js里改掉：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createApp&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = createApp(App);</span><br><span class="line">app.mount(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createApp&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = createApp(App);</span><br><span class="line">app.mount(<span class="string">&#x27;#app&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 <p>也许一开始就不该贪省事webstorm里直接创建项目了，不过就将错就错吧。</p>
 <h4 id="可视化">项目可视化管理工具 </h4>
